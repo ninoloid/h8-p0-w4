@@ -1,11 +1,11 @@
 function shoppingTime(memberId, money) {
   // you can only write your code here!
   let produk = {
-      'Sepatu Stacattu': 1500000,
-      'Baju Zoro': 500000,
-      'Baju H&N': 250000,
-      'Sweater Uniklooh': 175000,
-      'Casing Handphone': 50000
+      stacattu: 1500000,
+      zoro: 500000,
+      hn: 250000,
+      uniklooh: 175000,
+      casing: 50000
     },
     struk = {},
     temp = [],
@@ -15,13 +15,26 @@ function shoppingTime(memberId, money) {
   struk.money = money;
 
   // cek uangnya cukup ga buat beli produk, dari mulai yg paling atas.
-  for (i in produk) {
-    if (money >= produk[i]) {
-      temp.push(i);
-      money -= produk[i];
-    }
+  if (money >= produk.stacattu) {
+    temp.push('Sepatu Stacattu');
+    money -= produk.stacattu;
   }
-
+  if (money >= produk.zoro) {
+    temp.push('Baju Zoro');
+    money -= produk.zoro;
+  }
+  if (money >= produk.hn) {
+    temp.push('Baju H&N');
+    money -= produk.hn;
+  }
+  if (money >= produk.uniklooh) {
+    temp.push('Sweater Uniklooh');
+    money -= produk.uniklooh;
+  }
+  if (money >= produk.casing) {
+    temp.push('Casing Handphone');
+    money -= produk.casing;
+  }
   struk.listPurchased = temp;
   struk.changeMoney = money;
 
@@ -31,7 +44,7 @@ function shoppingTime(memberId, money) {
     cukup ga buat beli casing. kalau uang ga cukup, tampilin "uang tidak cukup". kalau uang cukup,
     tampilin struk yg udah dibikin di atas.
   */
-  return memberId ? initialMoney > produk['Casing Handphone'] ? struk : 'Mohon maaf, uang tidak cukup' : 'Mohon maaf, toko X hanya berlaku untuk member saja';
+  return memberId ? initialMoney > produk.casing ? struk : 'Mohon maaf, uang tidak cukup' : 'Mohon maaf, toko X hanya berlaku untuk member saja';
 }
 
 

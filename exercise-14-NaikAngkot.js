@@ -1,7 +1,6 @@
 function naikAngkot(arrPenumpang) {
   let rute = ['A', 'B', 'C', 'D', 'E', 'F'];
   let arrOrang = [];
-  let count;
   for (let i = 0; i < arrPenumpang.length; i++) {
     let orang = {};
     orang.penumpang = arrPenumpang[i][0];
